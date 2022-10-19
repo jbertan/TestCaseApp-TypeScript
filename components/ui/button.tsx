@@ -3,7 +3,7 @@ import styles from "../../styles/Home.module.scss";
 
 type props = {
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
 };
 const Button: React.FC<props> = (props) => {
   return (

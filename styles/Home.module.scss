@@ -1,0 +1,23 @@
+@import "_mixing.scss";
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 16px;
+  width: 326px;
+  height: 56px;
+  background: #000000;
+  border-radius: 99px;
+  h1 {
+    width: 37px;
+    height: 20px;
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+  }
+}

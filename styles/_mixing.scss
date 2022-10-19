@@ -1,0 +1,31 @@
+$color-primary: #ffcc33;
+$color-secondary: #fafafa;
+$color-button: #000000;
+
+@mixin centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+
+@mixin font-weight($var: null) {
+  @if $var == "regular" {
+    font-weight: 400;
+    font-size: 4rem;
+  } @else if $var == "med" {
+    font-weight: 600;
+
+    color: $color-secondary;
+    font-size: 6rem;
+  } @else if $var == "bold" {
+    font-weight: bold;
+    color: $color-primary;
+    font-size: 8rem;
+  }
+}

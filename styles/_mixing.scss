@@ -1,11 +1,29 @@
 $color-primary: #ffcc33;
 $color-secondary: #fafafa;
 $color-button: #000000;
-
+@mixin flexLayout {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+}
 @mixin centering {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@mixin container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 32px;
+  position: absolute;
+  width: 358px;
+  height: 290px;
+  background: #edbbbb;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
 }
 
 $font-weights: (

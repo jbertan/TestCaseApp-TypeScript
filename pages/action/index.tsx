@@ -7,8 +7,10 @@ const Action: React.FC = () => {
   return (
     <div className={style.layout_yellow}>
       <Layout>
-        <SquareCardCongratulations />
-        {/*   <SquareCardReclaim /> */}
+        <div className={style.center}>
+          <SquareCardCongratulations />
+          {/*   <SquareCardReclaim /> */}
+        </div>
       </Layout>
     </div>
   );

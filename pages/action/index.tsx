@@ -1,11 +1,15 @@
 import React from "react";
 import SquareCardReclaim from "../../components/card/squareCardReclaim";
 import SquareCardCongratulations from "../../components/card/squareCardCongratulations";
-import styles from "../../styles/Home.module.scss";
+import style from "../../styles/Home.module.scss";
+import Layout from "../../components/layout/layout";
 const Action: React.FC = () => {
   return (
-    <div className={styles.action_view}>
-      <SquareCardCongratulations />
+    <div className={style.layout_yellow}>
+      <Layout>
+        <SquareCardCongratulations />
+        {/*   <SquareCardReclaim /> */}
+      </Layout>
     </div>
   );
 };

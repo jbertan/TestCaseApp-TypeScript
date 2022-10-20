@@ -3,11 +3,12 @@ $color-secondary: #fafafa;
 $color-button: #000000;
 
 @mixin layout($color) {
-  position: relative;
-  width: 390px;
-  height: 844px;
-
+  width: 100%;
+  height: 100vh;
   background: $color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @mixin flexLayout {
   display: flex;
@@ -20,13 +21,13 @@ $color-button: #000000;
   align-items: center;
 }
 @mixin container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-items: flex-start;
   padding: 16px;
   gap: 32px;
-  position: absolute;
   width: 358px;
   height: 290px;
   background: #ffffff;

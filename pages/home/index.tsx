@@ -1,7 +1,9 @@
 import Layout from "../../components/layout/layout";
 import style from "../../styles/Home.module.scss";
 import Action from "../../components/actionItem/actions";
+import { DataContext } from "../../store/data-context";
 import { GetStaticProps } from "next";
+import { useContext, useEffect } from "react";
 export interface Data {
   id: number;
   title: string;
@@ -14,15 +16,26 @@ export interface data {
 }
 
 const Home: React.FC<data> = ({ data }) => {
-  data.map((data) => {
-    console.log(data.description);
-  });
+  let softStarter = true;
+  const dataCtx = useContext(DataContext);
+
+  console.log(dataCtx.data);
+
+  useEffect(() => {
+    if (softStarter) {
+      data.map((data) => {
+        dataCtx.addData(data);
+      });
+    }
+
+    softStarter = false;
+  }, []);
   return (
     <div className={style.layout_white}>
       <Layout>
         <div className={style.center_relative}>
           <h1 className={style.action_heading_text}>Actions to be completed</h1>
-          {data.map((data) => (
+          {dataCtx.data.map((data) => (
             <Action
               key={data.id}
               id={data.id}
@@ -47,7 +60,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       data,
     },
-    revalidate: 1,
+    revalidate: 600,
   };
 };
 export default Home;

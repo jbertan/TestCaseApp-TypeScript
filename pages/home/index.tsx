@@ -4,6 +4,7 @@ import Action from "../../components/actionItem/actions";
 import { DataContext } from "../../store/data-context";
 import { GetStaticProps } from "next";
 import { useContext, useEffect } from "react";
+import Router from "next/router";
 export interface Data {
   id: number;
   title: string;
@@ -15,20 +16,14 @@ export interface data {
   data: Data[];
 }
 
-const Home: React.FC<data> = ({ data }) => {
-  let softStarter = true;
+const Home: React.FC = () => {
   const dataCtx = useContext(DataContext);
 
-  console.log(dataCtx.data);
-
+  console.log(dataCtx);
   useEffect(() => {
-    if (softStarter) {
-      data.map((data) => {
-        dataCtx.addData(data);
-      });
+    if (dataCtx.lastData.id === 0 && dataCtx.data.length === 0) {
+      Router.push("./intro");
     }
-
-    softStarter = false;
   }, []);
   return (
     <div className={style.layout_white}>
@@ -51,16 +46,4 @@ const Home: React.FC<data> = ({ data }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(
-    "https://cdn.mallconomy.com/testcase/actions.json"
-  );
-  const data = await response.json();
-  return {
-    props: {
-      data,
-    },
-    revalidate: 600,
-  };
-};
 export default Home;

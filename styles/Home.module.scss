@@ -25,4 +25,5 @@
     line-height: 20px;
     color: #ffffff;
   }
+  @include layoutFixerSmall(250px);
 }

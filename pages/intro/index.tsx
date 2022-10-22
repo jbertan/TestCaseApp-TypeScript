@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { GetStaticProps } from "next";
 import { DataContext } from "../../store/data-context";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 export interface Data {
   id: number;
   title: string;
@@ -28,15 +28,18 @@ const Intro: React.FC<data> = ({ data }) => {
   const dataCtx = useContext(DataContext);
 
   console.log(dataCtx.scoreData);
-
+  console.log("outside index");
   useEffect(() => {
+    console.log("intro index");
     if (softStarter) {
+      console.log("inside index");
       data.map((data) => {
         dataCtx.addData(data);
       });
-    }
-    if (dataCtx.lastData.id !== 0 && dataCtx.data.length !== 0) {
-      router.push("./home");
+      if (localStorage.getItem("intro") === "true") {
+        router.push("./home");
+      }
+      localStorage.setItem("intro", "true");
     }
     softStarter = false;
   }, []);

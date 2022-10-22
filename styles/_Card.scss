@@ -1,0 +1,135 @@
+@import "mixing.scss";
+
+.container {
+  @include container;
+  @include layoutFixerSmall(280px);
+}
+.container_wrapper {
+  @include flexLayout;
+  gap: 32px;
+  width: 326px;
+  height: 258px;
+  @include layoutFixerSmall(250px);
+}
+.container_body {
+  @include flexLayout;
+  align-items: center;
+  gap: 16px;
+  width: 326px;
+  height: 170px;
+  @include layoutFixerSmall(250px);
+}
+.frame_1831 {
+  @include flexLayout;
+  align-items: center;
+  gap: 8px;
+  width: 326px;
+  height: 134px;
+  @include layoutFixerSmall(250px);
+}
+.container_h1 {
+  width: 326px;
+  height: 20px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  /* identical to box height, or 143% */
+  text-align: center;
+  @include layoutFixerSmallText(250px, 12px);
+}
+.container_svg {
+  display: flex;
+  width: 72;
+  height: 72;
+}
+.frame_h1 {
+  position: relative;
+  right: 4px;
+  height: 18px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: right;
+  color: #00cc00;
+}
+.frame_p {
+  width: 326px;
+  height: 28px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  /* identical to box height, or 140% */
+  text-align: center;
+
+  color: #000000;
+  @include layoutFixerSmallText(250px, 15px);
+}
+/* Inside auto layout */
+.container_footer {
+  @include flexLayout;
+  justify-content: flex-end;
+  align-items: center;
+  width: 326px;
+  height: 56px;
+  @include layoutFixerSmall(250px);
+}
+.button_group {
+  @include flexLayout;
+  align-items: flex-start;
+  gap: 16px;
+  width: 326px;
+  height: 56px;
+}
+.container_gratz {
+  @include flexLayout;
+  align-items: center;
+  gap: 16px;
+  width: 326px;
+  height: 164px;
+  @include layoutFixerSmall(250px);
+}
+
+.frame_gratz {
+  @include flexLayout;
+  align-items: center;
+  gap: 8px;
+  width: 326px;
+  height: 108px;
+  @include layoutFixerSmall(250px);
+}
+.frame_h1_gratz {
+  width: 326px;
+  height: 28px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  /* identical to box height, or 140% */
+  text-align: center;
+
+  color: #000000;
+  @include layoutFixerSmallText(250px, 18px);
+}
+
+.frame_p_gratz {
+  width: 326px;
+  height: 40px;
+
+  /* Body / Base / Regular */
+
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+
+  text-align: center;
+  @include layoutFixerSmallText(250px, 12px);
+}

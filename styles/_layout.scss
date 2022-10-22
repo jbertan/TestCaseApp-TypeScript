@@ -1,0 +1,63 @@
+@import "_mixing";
+.layout_yellow {
+  @include layout($color-primary);
+}
+.layout_white {
+  @include layout($color-secondary);
+}
+.layout {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 68px;
+  top: 0px;
+  background: #ffcc33;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.layout_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.layout_logo {
+  display: flex;
+  justify-content: center;
+  width: 146px;
+}
+
+.layout_frame_1830 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 123px;
+  height: 36px;
+  background: #000000;
+  border-radius: 99px;
+  @include layoutFixerSmall(100px);
+}
+.layout_frame_1830_text {
+  height: 20px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  color: #ffffff;
+}
+
+.layout_yellow_intro {
+  @extend .layout_yellow;
+  flex-direction: column;
+  padding-top: 21px;
+  padding-bottom: 15px;
+  justify-content: space-between;
+  align-items: center;
+}

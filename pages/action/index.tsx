@@ -20,13 +20,13 @@ const Action: React.FC<Data> = (props) => {
     if (dataCtx.lastData.id === 0) {
       router.push("./intro");
     }
-  }, []);
+  });
   return (
     <div className={style.layout_yellow}>
       <Layout>
         <div className={style.center}>
           {screen ? (
-            <SquareCardCongratulations screenHandler={screenHandler} />
+            <SquareCardCongratulations />
           ) : (
             <SquareCardReclaim screenHandler={screenHandler} />
           )}

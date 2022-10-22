@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 interface func {
   screenHandler: () => void;
 }
-const SquareCardCongratulations: React.FC<func> = (props) => {
+const SquareCardCongratulations: React.FC = () => {
   const router = useRouter();
   return (
     <div className={style.container}>

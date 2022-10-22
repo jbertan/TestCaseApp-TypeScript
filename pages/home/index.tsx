@@ -24,7 +24,7 @@ const Home: React.FC = () => {
     if (dataCtx.lastData.id === 0 && dataCtx.data.length === 0) {
       Router.push("./intro");
     }
-  }, []);
+  });
   return (
     <div className={style.layout_white}>
       <Layout>

@@ -40,13 +40,14 @@
 }
 .action_text_comment {
   width: 225px;
-  height: 16px;
+  height: 32px;
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   color: #999999;
+  overflow: hidden;
   @include layoutFixerSmallText(225px, 11px);
 }
 
